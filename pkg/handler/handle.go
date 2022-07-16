@@ -9,13 +9,13 @@ type Handler struct {
 	services *service.Service
 }
 
-func NewHandler(services *service.Service) *Handler { // создаём новый handler с полем srvices
+func NewHandler(s *service.Service) *Handler { // создаём новый handler с полем services
 	return &Handler{
-		services: services,
+		services: s,
 	}
 }
 
-func (h *Handler) InitRoutes() *gin.Engine { // обработчик роутов
+func (h *Handler) InitRoutes() *gin.Engine { // обработчик роутов, Создание роутов
 	router := gin.New() // инициализация роутов
 
 	auth := router.Group("/auth")
